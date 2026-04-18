@@ -1,7 +1,6 @@
-id=MMT-Ex
-name=Magisk Module Template Extended
-version=v3.7
-versionCode=19
-author=Zackptg5
-description=Magisk Module Template Extended
-updateJson=https://raw.githubusercontent.com/Zackptg5/MMT-Extended/master/update.json
+id=nothing-widevine
+name=Nothing Widevine L1 enabler
+version=v0.0.1
+versionCode=1
+author=Ubuntuify
+description=Custom ROMs often disable widevine due to a non-working TEE. However, the TEE can be reprovisioned to get a key for Widevine, fixing this issue. This simply adds back the required libraries to do so.
