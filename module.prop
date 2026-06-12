@@ -1,0 +1,6 @@
+id=nothing-widevine
+name=Nothing Widevine L1 enabler
+version=v1
+versionCode=1
+author=Ubuntuify
+description=Enables Widevine support with an unlocked bootloader on Nothing devices by reprovisioning the TEE and adding removed binaries on Custom ROMs.

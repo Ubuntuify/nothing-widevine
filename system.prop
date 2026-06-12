@@ -1,0 +1,2 @@
+vendor.wv.oemcrypto.debug.enable_hlos_data_path=true
+vendor.wv.oemcrypto.debug.enable_prov40=true
