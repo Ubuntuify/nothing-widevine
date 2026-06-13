@@ -16,7 +16,7 @@ Enables Widevine L1 (HD and/or higher) support on unlocked bootloaders on Nothin
 > [!CAUTION]
 > I'm not responsible for bricked devices, dead SD cards, thermonuclear war, or you getting fired because the alarm app failed.
 >
-> YOU are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you.
+> **YOU** are choosing to make these modifications, and if you point the finger at me for messing up your device, I will laugh at you.
 >
 > Your warranty will be void if you tamper with any part of your device / software.
 
@@ -28,17 +28,19 @@ Verify your device has RKP to at least verify you'll have Play Integrity when re
 
 ### Tested devices
 
-- Nothing Phone (3a) - both on Stock and Custom ROMs
+- **Nothing Phone (3a)** - both on Stock and Custom ROMs
 
 ## Guide
 
 1. Flash the module in KernelSU or Magisk.
 
-1. After rebooting, press the action button _once._ You only need to do this once for your device, and doing it multiple times may be harmful to your device.
+2. After rebooting, press the action button _once._ You only need to do this once for your device, and doing it multiple times may be harmful to your device. You should see the text say `TEE Done!` to verify that the provisioning has been successful. Any deviation should be reported as an issue in this GitHub repository.
 
-You should see the text say `TEE Done!` to verify that the provisioning has been successful. Any deviation should be reported as an issue in this GitHub repository.
+<img src="https://raw.githubusercontent.com/Ubuntuify/nothing-widevine/refs/heads/master/docs/images/ModuleActionButton.png" width="250" />
 
-1. Check with either the DRM info or Netflix apps to see whether you have a 5 digit system ID (or Key Attestation) and you should be finished.
+3. Check with either the DRM info or Netflix apps to see whether you have a 5 digit system ID (or Key Attestation) and you should be finished.
+
+<img src="https://raw.githubusercontent.com/Ubuntuify/nothing-widevine/refs/heads/master/docs/images/Netflix.png" width=250 /> <img src="https://raw.githubusercontent.com/Ubuntuify/nothing-widevine/refs/heads/master/docs/images/CastroDRM.png" width="250" />
 
 ### Other notes
 
@@ -50,6 +52,8 @@ HDR10 support can be enabled through spoofing a device that has it enabled. You 
 
 This module does not need to mount anything on stock ROMs (at least for the Nothing Phone 3a) as all libraries for Widevine are available, this module can be uninstalled in that case.
 
+Currently on Custom ROMs (for the Nothing Phone 3a), both libraries and system props have to be set to allow for Widevine to work, so this module is required to keep Widevine L1 working.
+
 #### RKP and Play Integrity
 
 This will also repair your device's functionality to provision a key from Google's website, allowing it to pass BASIC Integrity with an unlocked bootloader when a keybox is unavailable. Simply remove any modules that may conflict with this, such as Tricky Store, TEESimulator, or its forks.
@@ -57,4 +61,5 @@ This will also repair your device's functionality to provision a key from Google
 ## Credits
 
 - This [XDA thread](https://xdaforums.com/t/fix-widevine-l1-unlocked-bootloader.4731374/) about reprovisioning TEE on devices like _Nothing_, OPPO, OnePlus, and Realme Qualcomm platform devices to get Widevine L1 working again.
+- [Reprovisioning TEE guide which is related to this guide and script](https://github.com/wh1ter0z3/Reprogram-TEE-on-Qualcomm-devices/tree/main).
 - [ROM dumps](https://dumps.tadiphone.dev/dumps/nothing/asteroids/-/tree/qssi_64-user-16-BQ2A.250721.001-BP2A.250605.031.A3-2511181551-release-keys?ref_type=heads) where I took binaries for `KmInstallKeybox` and missing libraries on custom ROMs (for the Nothing Phone 3a)
