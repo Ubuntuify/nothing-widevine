@@ -5,7 +5,7 @@ provision_tee() {
 
   # This commands works the following way.
   # KmInstallKeybox Keybox_File Device_Id Attest_Device_Props_Bool
-  LD_LIBRARY_PATH=/vendor/lib64/hw:/vendor/lib64:$MODDIR/common/lib64 $MODDIR/common/KmInstallKeybox $MODDIR/common/attestation.xml attestation true
+  LD_LIBRARY_PATH=/vendor/lib64/hw:/vendor/lib64:$MODDIR/common/lib64 "$MODDIR/common/KmInstallKeybox" "$MODDIR/common/attestation.xml" attestation true
 
   echo "——— provision end ———"
 }
